@@ -3,6 +3,8 @@
 > 在页面中需要使用的地方定义一个容器，给定一个id,这里我定义了两个
 
 ```
+引入样式
+<link href="css/checkboxContent.css" type="text/css" rel="stylesheet">
 <div id="content1"></div>
 <div style="margin:20px 0">===========分割线=========</div>
 <div id="content2"></div>
@@ -12,9 +14,9 @@
 
 ```
 <!--  引入jq-->
-<script src="../js/jquery-3.6.1.min.js"></script>
+<script src="/js/jquery-3.6.1.min.js"></script>
 <!-- 引入checkbox源码 -->
-<script src="../js/checkboxContent.js"></script>
+<script src="/js/checkboxContent.js"></script>
 <script>
 //执行一个实例，生成一个省份多选框， checkboxList 不传默认是省份
 $("#content1").checkboxContent({
