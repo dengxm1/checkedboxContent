@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="css/checkboxContent.css" type="text/css" rel="stylesheet">
+</head>
+<body>
+    <div style="width: 400px;margin: 50px auto;">
+
+        <div id="content1"></div>
+        <div style="margin:20px 0">===========分割线=========</div>
+        <div id="content2"></div>
+
+    </div>
+</body>
+<!--  引入jq-->
+<script src="js/jquery-3.6.1.min.js"></script>
+<!-- 引入checkbox源码 -->
+<script src="js/checkboxContent.js"></script>
+<script>
+     //执行一个实例，生成一个省份多选框， checkboxList 不传默认是省份
+     $("#content1").checkboxContent({
+        checkedValue:['北京','天津','广东'], //默认选中的多选框值,
+        showSelectAll:true, //是否显示全选按钮，默认true
+        key:0,  //唯一键，必传
+        getValue:function(res){  //返回值的回调
+            console.log(res)
+        }
+     })
+    //  执行第二个实例
+     $("#content2").checkboxContent({
+        checkedValue:['小花1号','小花2号'], //默认选中的多选框值,
+        key:1,  //唯一键，必传
+        showSelectAll:false,
+        checkboxList:[  //要渲染的多选框选项数组，默认值是省份
+            {
+                id:'xiaohua1',
+                name:'小花1号'
+            },
+            {
+                id:'xiaohua2',
+                name:'小花2号'
+            },
+            {
+                id:'xiaohua3',
+                name:'小花3号'
+            },
+        ],  
+        getValue:function(res){  //返回值的回调
+            console.log(res)
+        }
+     })
+</script>
+</html>
